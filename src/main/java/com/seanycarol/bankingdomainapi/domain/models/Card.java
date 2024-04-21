@@ -2,6 +2,8 @@ package com.seanycarol.bankingdomainapi.domain.models;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity(name = "tb_card")
 public class Card {
 
@@ -13,7 +15,7 @@ public class Card {
     private String number;
 
     @Column(name = "available_limit", precision = 13, scale = 2)
-    private Number limit;
+    private BigDecimal limit;
 
     public Long getId() {
         return id;
@@ -31,11 +33,11 @@ public class Card {
         this.number = number;
     }
 
-    public Number getLimit() {
+    public BigDecimal getLimit() {
         return limit;
     }
 
-    public void setLimit(Number limit) {
+    public void setLimit(BigDecimal limit) {
         this.limit = limit;
     }
 }
